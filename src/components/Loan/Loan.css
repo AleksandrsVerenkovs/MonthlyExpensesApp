@@ -1,0 +1,73 @@
+:root {
+  --btn-width: 15vw;
+  --btn-radius: 20px;
+  --btn-size: 1rem
+}
+
+.loan__container {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.loan__container label {
+  margin-right: 0.5rem;
+}
+
+.loan__container input {
+  text-align: center;
+  width: 20vw;
+}
+
+.loan__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.loan__input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.loan__clearBtn {
+  background-color: salmon;
+  color: white;
+  font-size: var(--btn-size);
+  padding: 5px;
+  width: var(--btn-width);
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  border: none;
+}
+
+.loan__clearBtn:hover,.loan__clearBtn:focus {
+  background-color: rgba(181, 46, 46, 0.864);
+  outline: none;
+}
+
+.loan__clearBtn:active,.loan__addBtn:active {
+  transform: scale(1.05);
+}
+
+.loan__addBtn {
+  background-color: green;
+  color: white;
+  font-size: var(--btn-size);
+  padding: 5px;
+  width: var(--btn-width);
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  border: none;
+
+}
+
+.loan__addBtn:hover,.loan__addBtn:focus {
+  background-color: rgba(13, 145, 24, 0.864);
+  outline: none;
+}
