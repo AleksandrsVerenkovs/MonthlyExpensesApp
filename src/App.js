@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Loan from "./components/Loan/Loan";
 import LoanTable from "./components/LoanTable/LoanTable";
+import MonthsTable from "./components/MonthsTable/MonthsTable";
 import "./App.css";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
 
   const addLoanHandler = (loan) => {
     setLoans([...loans, loan]);
-    console.log(loans);
+    // console.log(loans);
   };
 
   return (
@@ -18,7 +19,7 @@ function App() {
       </header>
       <main>
         <Loan addLoan={addLoanHandler} />
-        {loans.length > 1 && (
+        {loans.length > 0 && (
           <div className="grid__container">
             <p className="grid__items grid__item-1">Name</p>
             <p className="grid__items grid__item-2">Amount</p>
@@ -27,6 +28,7 @@ function App() {
           </div>
         )}
         <LoanTable info={loans} />
+        <MonthsTable tables={loans}/>
       </main>
     </div>
   );

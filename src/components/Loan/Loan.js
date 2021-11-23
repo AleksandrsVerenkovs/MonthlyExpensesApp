@@ -2,21 +2,19 @@ import { useState } from "react";
 import "./Loan.css";
 
 const Loan = ({ addLoan }) => {
-  const [id, setId] = useState(0);
   
   const initialState = {
-    id: id,
+    id: 1,
     name: "",
-    amount: "",
+    amount: 0,
     period: 1,
-    interestRate: 0.5,
+    interestRate: 1,
   };
   const [loan, setLoan] = useState(initialState);
 
   const addHandler = (e) => {
     e.preventDefault();
     addLoan(loan);
-    setId(prev => prev + 1);
     clearHandler();
   };
 
@@ -26,7 +24,7 @@ const Loan = ({ addLoan }) => {
     }
   };
   const clearHandler = () => {
-    setLoan({...initialState,id: id});
+    setLoan(prevState => ({...initialState,id: prevState.id + 1}));
   };
 
   return (
@@ -71,7 +69,7 @@ const Loan = ({ addLoan }) => {
             type="number"
             onChange={(e) => setLoan({ ...loan, interestRate: e.target.value })}
             value={loan.interestRate}
-            min="0.5"
+            min="1"
             step="0.1"
             placeholder="percentage..."
             onKeyPress={(e) => keyPressHandler(e)}

@@ -8,7 +8,7 @@ const LoanTable = ({info}) => {
           <p className="loanTable__name">{table.name}</p>
           <p>{table.amount}</p>
           <p>{table.period}</p>
-          <p>{table.interestRate}</p>
+          <p>{`${table.interestRate}%`}</p>
         </li>
       ))}
     </ul>
