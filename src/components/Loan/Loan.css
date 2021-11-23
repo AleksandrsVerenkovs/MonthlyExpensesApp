@@ -1,15 +1,18 @@
 :root {
   --btn-width: 15vw;
   --btn-radius: 20px;
-  --btn-size: 1rem
+  --btn-size: 1rem;
+  --container-margin: 0 15vh;
 }
 
 .loan__container {
+  background-color: rgba(0, 255, 255, 0.9);
   display: flex;
-  margin-top: 1rem;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  margin: 1rem 19vh 1rem 19vh;
+  padding-top: 1rem;
+  border-radius: 20px;
 }
 
 .loan__container label {
@@ -33,6 +36,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .loan__clearBtn {

@@ -5,17 +5,14 @@ import "./MonthsTable.css";
 const MonthsTable = ({ tables }) => {
   const [months, setMonths] = useState([]);
 
-  const loanPeriod = (info) => {
-    for (let i = 1; i <= info.period; i++) {
-      if (months.filter((month) => month.monthNr === i).length > 0) {
+  const calculMonthlySplit = (table) => {
+    for (let i = 1; i <= table.period; i++) {
+      if (months.length > i) {
         const copy = [...months];
         copy[i - 1] = {
-          monthNr: copy[i - 1].monthNr,
-          baseSum:
-            copy[i - 1].baseSum + calculateBaseSum(info.amount, info.period),
-          interestSum:
-            copy[i - 1].interestSum +
-            calculateInterest(info.amount, info.interestRate, info.period),
+          monthNr:      copy[i - 1].monthNr,
+          baseSum:      copy[i - 1].baseSum + calculateBaseSum(table.amount, table.period),
+          interestSum:  copy[i - 1].interestSum + calculateInterest(table.amount, table.interestRate, table.period),
         };
         setMonths(copy);
       } else {
@@ -23,11 +20,11 @@ const MonthsTable = ({ tables }) => {
           ...prevState,
           {
             monthNr: i,
-            baseSum: calculateBaseSum(info.amount, info.period),
+            baseSum: calculateBaseSum(table.amount, table.period),
             interestSum: calculateInterest(
-              info.amount,
-              info.interestRate,
-              info.period
+              table.amount,
+              table.interestRate,
+              table.period
             ),
           },
         ]);
@@ -36,25 +33,28 @@ const MonthsTable = ({ tables }) => {
   };
 
   useEffect(() => {
-    const addToList = () => tables.map((table) => loanPeriod(table));
-    addToList();
+    const addToMonthsList = () => tables.map((table) => calculMonthlySplit(table));
+
+    addToMonthsList();
     console.log(months);
   }, [tables]);
 
   return (
-    <div className="month__container">
-      <div className="month__header">
+    <div>
+      <div className="month__header month__grid">
         <p>Month Number</p>
         <p>Base Sum</p>
         <p>Interest</p>
       </div>
-      {months.map((month) => (
-        <div className="month__item" key={month.monthNr}>
-          <div className="month__monthNr">{month.monthNr}</div>
-          <div className="month__baseSum">{month.baseSum}&#8364;</div>
-          <div className="month__interestSum">{month.interestSum}&#8364;</div>
-        </div>
-      ))}
+      <div className="month__container">
+        {months.map((month) => (
+          <div className="month__item month__grid" key={month.monthNr}>
+            <div className="month__monthNr">{month.monthNr}</div>
+            <div className="month__baseSum">{month.baseSum}&#8364;</div>
+            <div className="month__interestSum">{month.interestSum}&#8364;</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

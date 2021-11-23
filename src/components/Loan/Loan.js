@@ -23,6 +23,7 @@ const Loan = ({ addLoan }) => {
       addHandler(e);
     }
   };
+  
   const clearHandler = () => {
     setLoan(prevState => ({...initialState,id: prevState.id + 1}));
   };
