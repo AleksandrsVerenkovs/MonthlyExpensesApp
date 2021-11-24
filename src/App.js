@@ -9,7 +9,6 @@ function App() {
 
   const addLoanHandler = (loan) => {
     setLoans([...loans, loan]);
-    // console.log(loans);
   };
 
   return (
