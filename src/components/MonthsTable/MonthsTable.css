@@ -1,22 +1,50 @@
+:root{
+  --font-color: #454a4b;
+  --backgroun-color-green:#5ECD5C;
+}
+
 .month__grid {
   display: grid;
   grid-template-columns: 20vw 20vw 20vw;
   justify-content: center;
   text-align: center;
-  margin: 1rem 15vw 0 15vw;
 }
 .month__header {
-  padding: 0 1rem;
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: rgba(0, 255, 255, 0.9);
+  margin: 1rem 15vw 1rem 15vw;
+  padding: .5rem 0;
+  color: var(--font-color);  
 }
 
+.month__table {
+  padding-bottom: 1rem;
+  margin: 0 15vw;
+}
 .month__item {
   padding: 0 1rem;
-  background-color: #5ECD5C;
+  background-color: var(--backgroun-color-green);
   border-radius: 5px;
-  box-shadow: #5ECD5C 0px 2px 8px 0px;
+  box-shadow: var(--backgroun-color-green) 0px 2px 8px 0px;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  color: var(--font-color);  
+  }
+
+.month__result {
+  display: flex;
+  justify-content: right;
+  font-size: 1.3rem;  
+  font-weight: 600;
+  color: var(--font-color);  
+}
+
+.month__result > p {
+  background-color: var(--backgroun-color-green);
+  box-shadow: var(--backgroun-color-green) 0px 2px 8px 0px;
+  padding: 1rem;
+  margin: 0;
 }

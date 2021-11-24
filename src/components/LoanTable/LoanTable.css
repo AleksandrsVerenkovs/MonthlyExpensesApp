@@ -12,10 +12,13 @@
   text-align: center;
   justify-content: center;
   border-bottom: 2px solid #ccc;
-  margin: 0 15vw;
+}
+
+.loanTable__listItem > p {
+  margin: 0;
+  padding: .3rem 0;
 }
 .loanTable__name {
   max-width: 30vw;
-  /* word-wrap: break-word; */
   word-break: break-word;
 }
