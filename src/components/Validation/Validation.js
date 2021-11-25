@@ -1,6 +1,12 @@
 
 const validLoanName = (name) => {
-  return !name || name.trim().lenght < 3 ? true : false;
+  if(!name){
+    return true;
+  }
+  if(name.trim().length < 3){
+    return true;
+  }
+  return false;
 };
 
 const validLoanNumericValue = (value) => {

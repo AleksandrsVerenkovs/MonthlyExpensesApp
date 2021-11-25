@@ -1,6 +1,6 @@
-:root{
+:root {
   --font-color: #454a4b;
-  --background-color-yellow:#c8dc17;
+  --background-color-yellow: #c8dc17;
 }
 
 .month__grid {
@@ -16,8 +16,8 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: #00ffff;
   margin: 1rem 15vw 1rem 15vw;
-  padding: .5rem 0;
-  color: var(--font-color);  
+  padding: 0.5rem 0;
+  color: var(--font-color);
 }
 
 .month__table {
@@ -28,17 +28,17 @@
   padding: 0 1rem;
   background-color: var(--background-color-yellow);
   border-radius: 5px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--font-color);  
-  }
+  color: var(--font-color);
+}
 
 .month__result {
-    display: flex;
-    justify-content: right;
-    font-size: 1.3rem;  
-    font-weight: 600;
-    color: var(--font-color); 
+  display: flex;
+  justify-content: right;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--font-color);
 }
 
 .month__result > p {
@@ -46,5 +46,5 @@
   box-shadow: var(--background-color-yellow) 0px 2px 8px 0px;
   padding: 1rem;
   margin: 0;
-  border-radius: 10px; 
+  border-radius: 10px;
 }

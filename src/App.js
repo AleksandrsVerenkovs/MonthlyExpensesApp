@@ -11,13 +11,16 @@ function App() {
     setLoans([...loans, loan]);
   };
 
+  const clearLoanRecordHandler = () => {
+    setLoans([]);
+  };
   return (
     <div className="app__container">
       <header>
         <div className="app__title">Loan Calculator</div>
       </header>
       <main>
-        <Loan addLoan={addLoanHandler} />
+        <Loan addLoan={addLoanHandler} clearRecord={clearLoanRecordHandler} />
         {loans.length > 0 && (
           <div className="app__grid-container">
             <p className="app__grid-items app__grid-item-1">Name</p>
