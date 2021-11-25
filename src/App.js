@@ -9,22 +9,24 @@ function App() {
 
   const addLoanHandler = (loan) => {
     setLoans([...loans, loan]);
-    // console.log(loans);
   };
 
+  const clearLoanRecordHandler = () => {
+    setLoans([]);
+  };
   return (
     <div className="app__container">
       <header>
         <div className="app__title">Loan Calculator</div>
       </header>
       <main>
-        <Loan addLoan={addLoanHandler} />
+        <Loan addLoan={addLoanHandler} clearRecord={clearLoanRecordHandler} />
         {loans.length > 0 && (
-          <div className="grid__container">
-            <p className="grid__items grid__item-1">Name</p>
-            <p className="grid__items grid__item-2">Amount</p>
-            <p className="grid__items grid__item-3">Period</p>
-            <p className="grid__items grid__item-4">Rate</p>
+          <div className="app__grid-container">
+            <p className="app__grid-items app__grid-item-1">Name</p>
+            <p className="app__grid-items app__grid-item-2">Amount</p>
+            <p className="app__grid-items app__grid-item-3">Period</p>
+            <p className="app__grid-items app__grid-item-4">Rate</p>
           </div>
         )}
         <LoanTable info={loans} />

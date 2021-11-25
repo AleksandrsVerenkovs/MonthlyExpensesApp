@@ -1,40 +1,49 @@
+:root{
+  --container-margin: 0 15vw;
+  --container-border: 2px solid #ccc;
+}
+
 .app__container {
-  width: 100%;
+  height: 100%;
 }
 
 .app__title {
-  margin-top: 2rem;
+  padding-top: 2rem;
   font-size: 2rem;
   font-weight: bolder;
   text-align: center;
+  color: rgba(0, 255, 255, 0.9);
+  text-shadow: 2px 2px rgb(136, 127, 127);
 }
 
-.grid__container {
+.app__grid-container {
   display: grid;
   grid-template-columns: 30vw 20vw 10vw 10vw;
   text-align: center;
   justify-content: center;
+  margin: var(--container-margin);
+  border-top: var(--container-border);
+  border-bottom: var(--container-border);
+  background-color: rgba(240, 248, 255, 0.9);
 }
 
-.grid__items {
+.app__grid-items {
   margin: 0;
   padding: 0.5rem 0;
-  border-top: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
   font-size: 1.2rem;
   font-weight: bold;
   
 }
 
-.grid__item-1 {
+.app__grid-item-1 {
   grid-column-start: 1;
 }
-.grid__item-2 {
+.app__grid-item-2 {
   grid-column-start: 2;
 }
-.grid__item-3 {
+.app__grid-item-3 {
   grid-column-start: 3;
 }
-.grid__item-4 {
+.app__grid-item-4 {
   grid-column-start: 4;
 }

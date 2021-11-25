@@ -1,24 +1,31 @@
 :root {
   --btn-width: 15vw;
   --btn-radius: 20px;
-  --btn-size: 1rem
+  --btn-size: 1rem;
+  --container-margin: 0 15vh;
 }
 
 .loan__container {
+  background-color: rgb(0, 255, 255);
   display: flex;
-  margin-top: 1rem;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  margin: 1rem 15vw 1rem 15vw;
+  padding: 1rem 0 0.5rem 0;
+  border-radius: 20px;
 }
 
 .loan__container label {
   margin-right: 0.5rem;
 }
 
-.loan__container input {
+.loan__input {
   text-align: center;
   width: 20vw;
+}
+
+.loan__input:focus {
+  outline-color: aqua;
 }
 
 .loan__buttons {
@@ -28,11 +35,14 @@
   padding: 0.3rem;
 }
 
-.loan__input {
+.loan__inputContainer {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+  font-weight: 600;
+  outline: none;
 }
 
 .loan__clearBtn {
@@ -42,32 +52,57 @@
   padding: 5px;
   width: var(--btn-width);
   border-radius: var(--btn-radius);
+  box-shadow: salmon 0px 2px 8px 0px;
   cursor: pointer;
   border: none;
 }
 
-.loan__clearBtn:hover,.loan__clearBtn:focus {
+.loan__clearBtn:hover,
+.loan__clearBtn:active {
   background-color: rgba(181, 46, 46, 0.864);
   outline: none;
 }
 
-.loan__clearBtn:active,.loan__addBtn:active {
+.loan__clearBtn:active,
+.loan__addBtn:active {
   transform: scale(1.05);
 }
 
 .loan__addBtn {
-  background-color: #22C120;
+  background-color: #22c120;
   color: white;
   font-size: var(--btn-size);
   padding: 5px;
+  margin: 0 1rem;
   width: var(--btn-width);
   border-radius: var(--btn-radius);
   cursor: pointer;
   border: none;
-
 }
 
-.loan__addBtn:hover,.loan__addBtn:focus {
+.loan__addBtn:hover,
+.loan__addBtn:active {
   background-color: rgba(13, 145, 24, 0.864);
   outline: none;
+}
+
+.loan__addBtn:focus,.loan__clearBtn:focus{
+  outline-color: aqua;
+}
+
+.loan__errorMsg {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  margin-right: 1rem;
+  margin-top: -0.5rem;
+  color: red;
+}
+
+.loan__tooltip {
+  position: absolute;
+  right: -1.2rem;
+  bottom: 0;
 }
